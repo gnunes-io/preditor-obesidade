@@ -97,9 +97,9 @@ else:
 
     # KPIs (6 colunas)
     k1, k2, k3, k4, k5, k6 = st.columns(6)
-    k1.metric("Acurácia (hold-out)", f"{metrics['test_accuracy']:.1%}")
+    k1.metric("Acurácia", f"{metrics['test_accuracy']:.1%}")
     k2.metric("Macro-F1",           f"{metrics['macro_f1']:.1%}" if metrics.get('macro_f1') else "N/A")
-    k3.metric("ROC-AUC Macro",      f"{metrics['roc_auc_macro']:.4f}" if metrics.get('roc_auc_macro') else "N/A")
+    k3.metric("ROC-AUC",      f"{metrics['roc_auc_macro']:.4f}" if metrics.get('roc_auc_macro') else "N/A")
     k4.metric("Acurácia CV (5-fold)", f"{metrics['cv_mean']:.1%}")
     k5.metric("Desvio Padrão CV",   f"± {metrics['cv_std']:.1%}")
     k6.metric("Amostras de treino", f"{metrics.get('n_samples', '?'):,}")
@@ -305,8 +305,8 @@ st.warning("""
 **1. 77% dos dados são sintéticos (SMOTE)**
 O dataset original contém apenas 498 registros reais. Os demais 1.613 registros foram gerados
 artificialmente via SMOTE (*Synthetic Minority Over-sampling Technique*) para balancear as classes.
-Dados sintéticos seguem distribuições controladas e matematicamente coerentes, e por isso o modelo
-atinge ~97% de acurácia. Esse número **não reflete o desempenho esperado em dados hospitalares reais**,
+Dados sintéticos seguem distribuições controladas e matematicamente coerentes, e ajuda muito o modelo
+atingir ~85% de acurácia. Esse número **não reflete o desempenho esperado em dados hospitalares reais**,
 onde ruído, valores ausentes e variabilidade humana são muito maiores.
 
 **2. Modelo treinado em população específica**

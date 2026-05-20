@@ -64,7 +64,7 @@ def load_data() -> pd.DataFrame:
 df = load_data()
 
 # ── Dicionário de Variáveis ───────────────────────────────────────────────────
-with st.expander("📖 Ver dicionário completo de variáveis — 17 variáveis do dataset original. Height e Weight são exibidas para contexto mas não são utilizadas no modelo preditivo."):
+with st.expander("📖 Ver dicionário completo de variáveis. 17 variáveis do dataset original. Height e Weight são exibidas para contexto mas não são utilizadas no modelo preditivo."):
     dicionario = pd.DataFrame([
         ("Gender",         "Gênero",                    "Sexo biológico",                                     "Feminino, Masculino",                               "Sim"),
         ("Age",            "Idade",                     "Idade em anos",                                      "14–61",                                             "Sim"),
