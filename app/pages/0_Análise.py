@@ -156,20 +156,6 @@ st.plotly_chart(fig_box)
 
 st.divider()
 
-# ── IMC vs Peso scatter ───────────────────────────────────────────────────────
-st.subheader("IMC × Peso por Classe")
-fig_sc = px.scatter(
-    df, x="Weight", y="BMI", color="Classe",
-    color_discrete_map=COLOR_MAP,
-    opacity=0.4,
-    labels={"Weight": "Peso (kg)", "BMI": "IMC"},
-    category_orders={"Classe": OBESITY_ORDER},
-)
-fig_sc.update_layout(legend=dict(orientation="h", y=-0.2))
-st.plotly_chart(fig_sc)
-
-st.divider()
-
 # ── Variáveis categóricas ─────────────────────────────────────────────────────
 st.subheader("Variáveis Categóricas")
 
